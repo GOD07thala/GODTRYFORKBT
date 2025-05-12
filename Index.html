@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prediction Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans min-h-screen p-6">
+  <div class="max-w-3xl mx-auto space-y-6">
+
+    <!-- First Container: Period Result and Timer -->
+    <div class="bg-white rounded-xl shadow p-6">
+      <h2 class="text-xl font-bold mb-4 text-gray-700">Current Period</h2>
+      <div class="flex items-center justify-between mb-2">
+        <span class="text-lg font-semibold text-gray-600">Period ID: <span id="period-id">--</span></span>
+        <span class="text-lg font-semibold text-red-500">Timer: <span id="timer">00:00</span></span>
+      </div>
+      <div class="text-center mt-4">
+        <span class="text-2xl font-bold text-indigo-600" id="prediction-result">Waiting...</span>
+      </div>
+    </div>
+
+    <!-- Second Container: History of Results -->
+    <div class="bg-white rounded-xl shadow p-6">
+      <h2 class="text-xl font-bold mb-4 text-gray-700">Result History</h2>
+      <ul id="result-history" class="space-y-2">
+        <!-- Result Items will be inserted dynamically -->
+        <!-- Example:
+        <li class="flex justify-between items-center border-b pb-2 text-gray-700">
+          <span>Period #1024</span>
+          <span class="font-bold text-green-500">Win</span>
+        </li>
+        -->
+      </ul>
+    </div>
+
+  </div>
+
+  <script>
+    // Placeholder script to simulate dynamic updates
+    document.getElementById('period-id').textContent = '1025';
+    document.getElementById('timer').textContent = '00:45';
+    document.getElementById('prediction-result').textContent = 'Predicting...';
+
+    // Example to append a result to history
+    const history = document.getElementById('result-history');
+    const resultItem = document.createElement('li');
+    resultItem.className = "flex justify-between items-center border-b pb-2 text-gray-700";
+    resultItem.innerHTML = `<span>Period #1024</span><span class="font-bold text-green-500">Win</span>`;
+    history.appendChild(resultItem);
+  </script>
+</body>
+</html>
